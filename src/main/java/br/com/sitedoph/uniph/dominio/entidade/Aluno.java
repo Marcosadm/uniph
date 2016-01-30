@@ -2,12 +2,19 @@ package br.com.sitedoph.uniph.dominio.entidade;
 
 import java.util.Calendar;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
-@table(name = "TB_ALUNO")
+@Table(name = "TB_ALUNO")
 public class Aluno {
 
-
-	@Column (name = "id")
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private Long id;
 	@Column(name = "nomeCompleto")
 	private String nomeCompleto;
@@ -22,8 +29,8 @@ public class Aluno {
 	private String telefone;
 	@Column(name = "email")
 	private String email;
-	@Column (name = "dataDeCadastro")
-	private Calendar dataDeCadastro
+	@Column(name = "dataDeCadastro")
+	private Calendar dataDeCadastro;
 
 	public Long getId() {
 		return id;

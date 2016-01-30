@@ -1,8 +1,8 @@
 package br.com.sitedoph.uniph.dominio.entidade;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,13 +11,17 @@ import javax.persistence.Table;
 public class Usuario {
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.SEQUENCE,)
+	@GeneratedValue
 	@Column(name = "CODIGO")
 	private Long id;
 
-	private String nomeCompleto
+	@Column(name = "NOME_COMPLETO")
+	private String nomeCompleto;
 
+	@Column(name = "LOGIN")
 	private String Login;
+	
+	@Column(name = "SENHA")
 	private String senha;
 
 	public Long getId() {
